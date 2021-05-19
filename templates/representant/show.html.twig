@@ -1,0 +1,376 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} FCT - {{ representant.nom }} {{ representant.cognom }}{% endblock %}
+
+{% block body %}
+<div class="row m-0">
+
+
+    <div class="col-6 mt-5">
+
+        <div class="card shadow ">
+
+            <div class="card-body">
+                <div class="contenedor bg-white">
+
+                    <div class="row m-0">
+
+                        <div class="col-8 ">
+                            <small class="small-text">Fitxa tecnica del representant</small>
+                        </div>
+                        {% if representant.alta == false %}
+                            <div class="col-4 d-flex justify-content-end text-danger  align-items-center"> <i class="fa fa-circle" aria-hidden="true"></i> &ensp; Inactiu</div>
+                        {% else %}
+                            <div class="col-4 d-flex justify-content-end text-success  align-items-center"> <i class="fa fa-circle" aria-hidden="true"></i>&ensp; Actiu</div>
+
+                        {% endif %}
+
+                    </div>
+                    <div class="row m-0 mt-3  ">
+
+                        <div class="col-12 text-center">
+                            <h4 class="bg-turqNoEmbed py-2 ">{{ representant.nom}} {{ representant.cognom }}</h4>
+                        </div>
+
+
+                        <div class="col-12 mt-4">
+
+                            <form>
+                                <h6>Informació bàsica del representant</h6>
+                                <hr>
+                                <div class="form-group row m-0  mb-3">
+
+                                    <label class="col-sm-2 col-form-label bg-secondary text-white rounded-start" for="exampleInputEmail1">Empresa</label>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            <input type="text" readonly class="form-control shadow-none" id="inlineFormInputGroup" value="Festeweb">
+                                            <div class="input-group-prepend ">
+                                                <div class="input-group-text bg-light h-100">
+
+                                                    <i class="fa fa-clone" aria-hidden="true"></i>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row m-0 mt-4 mb-3">
+
+                                    <label class="col-sm-2 col-form-label bg-secondary text-white rounded-start" for="poblacio">Població</label>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            <input type="text" readonly class="form-control shadow-none" id="poblacio" value="{{ representant.poblacio }}">
+                                            <div class="input-group-prepend ">
+                                                <div class="input-group-text bg-light h-100">
+
+                                                    <i class="fa fa-clone" aria-hidden="true"></i>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h6 class="mt-5">Informació de contacte</h6>
+                                <hr>
+                                <div class="form-group row m-0  mb-3">
+
+                                    <label class="col-sm-2 col-form-label bg-secondary text-white rounded-start" for="exampleInputEmail1">Email</label>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            <input type="text" readonly class="form-control shadow-none" id="inlineFormInputGroup" value="{{ representant.mail }}">
+                                            <div class="input-group-prepend ">
+                                                <div class="input-group-text bg-light h-100">
+
+                                                    <i class="fa fa-clone" aria-hidden="true"></i>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row m-0 mt-4 mb-3">
+
+                                    <label class="col-sm-2 col-form-label bg-secondary text-white rounded-start" for="exampleInputEmail1">Telefon</label>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            <input type="text" readonly class="form-control shadow-none" id="inlineFormInputGroup" value="{{ representant.telefon }}">
+                                            <div class="input-group-prepend ">
+                                                <div class="input-group-text bg-light h-100">
+
+                                                    <i class="fa fa-clone" aria-hidden="true"></i>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                            </form>
+
+                        </div>
+
+                    </div><!--Fi row fitxa tecnica-->
+                </div>
+
+
+
+            </div><!--fi card-body1-->
+
+        </div>
+
+
+    </div><!--fi columna de fitxa tecnica-->
+
+    <div class="col-6 mt-5">
+
+        <div class="row m-0 h-100">
+
+            <div class="col-12 p-0 ">
+
+                <div class="card shadow h-100">
+
+                    <div class="card-header">
+
+                        <h5 class="m-0 titol-informacio">Accions relacionades</h5>
+
+                    </div>
+
+                    <div class="card-body h-100">
+
+
+                        <div class="contenedor bg-white">
+
+                            <div class="row m-0">
+
+
+                                <div class="col-2 p-2 ">
+                                    <div class="subcontainer">
+                                        <h6 class="mb-0">05/12/22</h6>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-8 bg-white p-2 ">
+
+                                    <div class="subcontainer">
+
+                                        <h6 class="mb-0">Vicent Jorda - Arribant a un acord - Fes-te web</h6>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
+                                    </button></div>
+
+
+
+                            </div>
+                            <div class="row m-0">
+
+
+                                <div class="col-2 p-2 ">
+                                    <div class="subcontainer">
+                                        <h6 class="mb-0">05/12/22</h6>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-8 bg-white p-2 ">
+
+                                    <div class="subcontainer">
+
+                                        <h6 class="mb-0">Vicent Jorda - Arribant a un acord - Fes-te web</h6>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
+                                    </button></div>
+
+
+
+                            </div>
+                            <div class="row m-0">
+
+
+                                <div class="col-2 p-2 ">
+                                    <div class="subcontainer">
+                                        <h6 class="mb-0">05/12/22</h6>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-8 bg-white p-2 ">
+
+                                    <div class="subcontainer">
+
+                                        <h6 class="mb-0">Vicent Jorda - Arribant a un acord - Fes-te web</h6>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
+                                    </button></div>
+
+
+
+                            </div>
+                            <div class="row m-0">
+
+
+                                <div class="col-2 p-2 ">
+                                    <div class="subcontainer">
+                                        <h6 class="mb-0">05/12/22</h6>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-8 bg-white p-2 ">
+
+                                    <div class="subcontainer">
+
+                                        <h6 class="mb-0">Vicent Jorda - Arribant a un acord - Fes-te web</h6>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
+                                    </button></div>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </div><!--fi columna de representants relacionats-->
+
+</div>
+
+<div class="row m-0">
+
+    <div class="col-3 mt-2  ">
+
+        {% if representant.alta == true %}
+            <div class="card shadow h-100 containerDanger">
+                <form method="post" action="{{ path('representant_alta', {'id': representant.id}) }}" onsubmit="return confirm('Estas segur que vols donar de baixa aquest representant?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ representant.id) }}">
+                    <button class="common-link text-danger btn w-100" type="submit" href="">
+                        <div class="card-body">
+                            <div class="contenedor">
+
+                                <div class="h-100">
+
+                                    <div class="d-flex justify-content-center align-items-center containerDanger"><i class="fa fa-trash" aria-hidden="true"></i>
+                                        &ensp; Donar baixa</div>
+
+                                </div>
+                            </div>
+
+                        </div><!--fi card-body1-->
+                    </button>
+                </form>
+            </div>
+        {% else %}
+            <div class="card shadow h-100 containerBlue">
+                <form method="post" action="{{ path('representant_alta', {'id': representant.id}) }}" onsubmit="return confirm('Estas segur que vols donar de alta aquest representant?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ representant.id) }}">
+                    <button class="common-link color-heavyBlue btn w-100" type="submit" href="">
+                        <div class="card-body">
+                            <div class="contenedor">
+
+                                <div class="h-100">
+
+                                    <div class="d-flex justify-content-center align-items-center containerBlue"><i class="fa fa-globe" aria-hidden="true"></i>
+                                        &ensp; Donar alta</div>
+
+                                </div>
+                            </div>
+
+                        </div><!--fi card-body1-->
+                    </button>
+                </form>
+            </div>
+
+        {% endif %}
+
+
+    </div>
+
+    <div class="col-3 mt-2 ">
+
+        <div class="card shadow h-100 containerBlue ">
+            <form method="get" action="{{ path('representant_edit', {'id': representant.id}) }}">
+                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                    <div class="card-body">
+                        <div class="contenedor">
+
+                            <div class="h-100">
+
+                                <div class="d-flex justify-content-center align-items-center"><i class="fa fa-pencil" aria-hidden="true"></i>
+
+                                    &ensp; Editar</div>
+
+                            </div>
+                        </div>
+
+                    </div><!--fi card-body1-->
+                </button>
+            </form>
+
+        </div>
+    </div>
+    <div class="col-6 mt-2">
+        <div class="card shadow h-100 containerBlue">
+
+            <form method="get" action="{{ path('representant_edit', {'id': representant.id}) }}">
+                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                    <div class="card-body">
+                        <div class="contenedor">
+
+                            <div class="h-100">
+
+                                <div class="d-flex justify-content-center align-items-center">
+                                    Totes les accions relacionades &ensp; <i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+
+                            </div>
+                        </div>
+
+                    </div><!--fi card-body1-->
+                </button>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{#
+
+<form method="post" action="{{ path('representant_delete', {'id': representant.id}) }}" onsubmit="return confirm('Estas segur de que vols esborrar aquest representant??');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ representant.id) }}">
+    <button class="btn">Esborrar</button>
+</form>
+#}
