@@ -19,11 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="">
+    <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="Cicles i algunes millores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210518180339.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210518180544.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/empresa/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empresa/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cicle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Empresa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Representant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Representant.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,8 +189,23 @@
       <workItem from="1620667382549" duration="5101000" />
       <workItem from="1621358340843" duration="5410000" />
       <workItem from="1621443198530" duration="3302000" />
-      <workItem from="1622051487326" duration="1568000" />
+      <workItem from="1622051487326" duration="5251000" />
     </task>
+    <task id="LOCAL-00001" summary="Cicles i algunes millores">
+      <created>1622053095039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622053095039</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Cicles i algunes millores">
+      <created>1622053107301</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622053107301</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +222,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cicles i algunes millores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cicles i algunes millores" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="552" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621361635021">
       <screen x="0" y="0" width="1536" height="824" />
@@ -222,5 +241,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1619280950014" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1622053110775">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622053110775" />
   </component>
 </project>

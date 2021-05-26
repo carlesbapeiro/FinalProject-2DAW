@@ -70,9 +70,15 @@ class Empresa
      */
     private $representants;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Practica::class, mappedBy="empresa")
+     */
+    private $practiques;
+
     public function __construct()
     {
         $this->representants = new ArrayCollection();
+        $this->practiques = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -200,6 +206,36 @@ class Empresa
             // set the owning side to null (unless already changed)
             if ($representant->getEmpresa() === $this) {
                 $representant->setEmpresa(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Practica[]
+     */
+    public function getPractiques(): Collection
+    {
+        return $this->practiques;
+    }
+
+    public function addPractique(Practica $practique): self
+    {
+        if (!$this->practiques->contains($practique)) {
+            $this->practiques[] = $practique;
+            $practique->setEmpresa($this);
+        }
+
+        return $this;
+    }
+
+    public function removePractique(Practica $practique): self
+    {
+        if ($this->practiques->removeElement($practique)) {
+            // set the owning side to null (unless already changed)
+            if ($practique->getEmpresa() === $this) {
+                $practique->setEmpresa(null);
             }
         }
 

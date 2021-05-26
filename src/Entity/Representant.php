@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RepresentantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -57,6 +59,16 @@ class Representant
      * @ORM\JoinColumn(nullable=true)
      */
     private $empresa;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Accio::class, mappedBy="representant")
+     */
+    private $accions;
+
+    public function __construct()
+    {
+        $this->accions = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -143,6 +155,36 @@ class Representant
     public function setEmpresa(?Empresa $empresa): self
     {
         $this->empresa = $empresa;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Accio[]
+     */
+    public function getAccions(): Collection
+    {
+        return $this->accions;
+    }
+
+    public function addAccion(Accio $accion): self
+    {
+        if (!$this->accions->contains($accion)) {
+            $this->accions[] = $accion;
+            $accion->setRepresentant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAccion(Accio $accion): self
+    {
+        if ($this->accions->removeElement($accion)) {
+            // set the owning side to null (unless already changed)
+            if ($accion->getRepresentant() === $this) {
+                $accion->setRepresentant(null);
+            }
+        }
 
         return $this;
     }
