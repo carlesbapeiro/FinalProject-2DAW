@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nou Cicle{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+
+    <div class="row m-0 mt-3">
+
+
+        <div class="col-8 mt-5">
+
+            <div class="card shadow ">
+
+                <div class="card-body">
+                    <div class="contenedor bg-white">
+
+                        <div class="row m-0">
+
+                            <div class="col-12 ">
+                                <small class="small-text">Formulari de creació de cicles</small>
+                            </div>
+                        </div>
+
+                        <div class="row m-0 ">
+                            <div class="col-12 mt-2">
+
+                                <h6>Informació bàsica del cicle</h6>
+                                <hr>
+
+                                <div class="form-group row m-0  mb-3">
+
+
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.nom,null, {errors: []}) }}</div>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.nom) }}
+                                            {#<input type="text"  class="form-control shadow-none" id="nom" value="" placeholder="Nom">#}
+
+                                        </div>
+                                    </div>
+                                    {{ form_errors(form.nom) }}
+                                </div>
+                                <div class="form-group row m-0  mb-3">
+
+                                    <div class="row m-0 p-0">
+
+                                        <div class="col-sm-12 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.alumnes,null, {errors: []}) }}</div>
+                                    </div>
+                                    <div class="row m-0 p-0">
+                                        <div class="col-12 p-0">
+                                            <div class="input-group">
+
+                                                {{ form_widget(form.alumnes)}}
+                                                {#{{ dump(form.alumnes.vars.data) }}#}
+{#                                                {{ dump(form.alumnes) }}#}
+{#
+                                                <select name="cicle[alumnes][]" id="cicle_alumnes" multiple="multiple" class="form-control shadow-none form-control">
+
+                                                    {% for alumne in form.alumnes.vars.choices %}
+
+                                                        <option value="{{ alumne.value }}">{{ alumne.label }}</option>
+                                                    {% endfor %}
+
+                                                </select>#}
+{#                                                <div class="d-none">
+
+                                                    {{ form_widget(form.alumnes) }}
+                                                </div>#}
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    {{ form_errors(form.alumnes) }}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div><!--fi card-body1-->
+
+            </div>
+
+
+        </div><!--fi columna principal-->
+
+        <div class="col-4">
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="row m-0">
+        <div class="col-4 mt-2 ">
+
+            <div class="card shadow h-100 containerBlue ">
+
+                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                    <div class="card-body">
+                        <div class="contenedor">
+
+                            <div class="h-100">
+
+                                <div class="d-flex justify-content-center align-items-center">
+                                    Validar les dades &ensp; <i class="fa fa-check" aria-hidden="true"></i></div>
+
+                            </div>
+                        </div>
+
+                    </div><!--fi card-body1-->
+                </button>
+            </div>
+        </div>
+        <div class="col-4 mt-2  ">
+            <div class="card shadow h-100 containerBlue">
+                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                    <div class="card-body">
+                        <div class="contenedor">
+
+                            <div class="h-100">
+
+                                <div class="d-flex justify-content-center align-items-center">
+                                    Crear &ensp; <i class="fa fa-plus" aria-hidden="true"></i></div>
+
+                            </div>
+                        </div>
+
+                    </div><!--fi card-body1-->
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    {{ form_end(form) }}
+{% endblock %}

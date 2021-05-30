@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Cicle{% endblock %}
+
+{% block body %}
+    {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+
+
+    <div class="row m-0 mt-3">
+
+
+        <div class="col-8 mt-5">
+
+            <div class="card shadow ">
+
+                <div class="card-body">
+                    <div class="contenedor bg-white">
+
+                        <div class="row m-0">
+
+                            <div class="col-12 ">
+                                <small class="small-text">Formulari d'edició de cicles</small>
+                            </div>
+                        </div>
+
+                        <div class="row m-0 ">
+                            <div class="col-12 mt-2">
+
+                                <h6>Informació bàsica del cicle</h6>
+                                <hr>
+                                <div class="form-group row m-0  mb-3">
+
+
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.nom,null, {errors: []}) }}</div>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.nom) }}
+                                            {#<input type="text"  class="form-control shadow-none" id="nom" value="" placeholder="Nom">#}
+
+                                        </div>
+                                    </div>
+                                    {{ form_errors(form.nom) }}
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!--fi card-body1-->
+
+            </div>
+
+
+        </div><!--fi columna principal-->
+
+        <div class="col-4"></div>
+
+
+
+
+
+    </div>
+
+    <div class="row m-0">
+        <div class="col-4 mt-2 ">
+
+            <div class="card shadow h-100 containerBlue ">
+
+                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                    <div class="card-body">
+                        <div class="contenedor">
+
+                            <div class="h-100">
+
+                                <div class="d-flex justify-content-center align-items-center"><i class="fa fa-check" aria-hidden="true"></i>
+                                    &ensp; Validar les dades &ensp; </div>
+
+                            </div>
+                        </div>
+
+                    </div><!--fi card-body1-->
+                </button>
+            </div>
+        </div>
+        <div class="col-4 mt-2  ">
+            <div class="card shadow h-100 containerBlue">
+                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                    <div class="card-body">
+                        <div class="contenedor">
+
+                            <div class="h-100">
+
+                                <div class="d-flex justify-content-center align-items-center"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                    &ensp; Editar &ensp; </div>
+
+                            </div>
+                        </div>
+
+                    </div><!--fi card-body1-->
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    {{ form_end(form) }}
+{% endblock %}

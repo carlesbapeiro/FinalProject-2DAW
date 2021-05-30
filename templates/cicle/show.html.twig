@@ -1,0 +1,150 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} FCT - {{ cicle.nom }}{% endblock %}
+
+{% block body %}
+        <div class="row m-0">
+
+
+            <div class="col-12 mt-5">
+
+                <div class="card shadow ">
+
+                    <div class="card-body">
+                        <div class="contenedor bg-white">
+
+                            <div class="row m-0">
+
+                                <div class="col-8 ">
+                                    <small class="small-text">Fitxa tecnica del cicle</small>
+                                </div>
+
+                            </div>
+                            <div class="row m-0 mt-3  ">
+
+                                <div class="col-12 text-center">
+                                    <h4 class="bg-turqNoEmbed py-2 ">{{ cicle.nom}}</h4>
+                                </div>
+
+                                <div class="col-8 text-center py-3">
+
+                                    <h5 class="pb-3">Alumnes del cicle</h5>
+                                    <div class="row m-0 mt-2">
+                                        <hr class="w-100">
+                                    </div>
+                                    {% set contador = 0 %}
+
+{#                                    {{ dump(cicle.alumnes) }}#}
+                                    <div class="row m-0 w-100 ">
+
+
+                                    {% for alumne in cicle.alumnes %}
+
+                                        <div class="col-6 d-flex justify-content-center">
+                                            <div class="card mb-3 w-100">
+                                                <div class="card-body">
+                                                    <span class="card-title">{{ alumne.nom }} {{ alumne.cognom }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% set contador = contador + 1%}
+
+
+                                    {% endfor  %}
+                                    </div>
+
+                                    {% if contador == 0 %}
+                                    <span>No s'ha trobat cap alumne</span>
+                                    {% endif %}
+
+
+
+
+                                </div>
+
+                                <div class="col-4">
+                                    <div class="row m-0 mb-2">
+
+                                        <div class="col-12 mt-2 ">
+
+                                            <div class="card shadow h-100 containerBlue ">
+                                                <form method="get" action="{{ path('cicle_edit', {'id': cicle.id}) }}">
+                                                    <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                                                        <div class="card-body">
+                                                            <div class="contenedor">
+
+                                                                <div class="h-100">
+
+                                                                    <div class="d-flex justify-content-center align-items-center"><i class="fa fa-pencil" aria-hidden="true"></i>
+
+                                                                        &ensp; Editar</div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div><!--fi card-body1-->
+                                                    </button>
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 my-2">
+                                        <div class="col-12 mt-2  ">
+
+                                            <div class="card shadow h-100 containerDanger">
+                                                <form method="post" action="{{ path('cicle_delete', {'id': cicle.id}) }}" onsubmit="return confirm('Aquest cicle sera esborrat de forma permannt, estas segur/a?');">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ cicle.id) }}">
+                                                    <button class="common-link text-danger btn w-100" type="submit" href="">
+                                                        <div class="card-body">
+                                                            <div class="contenedor">
+
+                                                                <div class="h-100">
+
+                                                                    <div class="d-flex justify-content-center align-items-center containerDanger"><i class="fa fa-trash" aria-hidden="true"></i>
+                                                                        &ensp; Esborrar</div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div><!--fi card-body1-->
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div><!--Fi row fitxa tecnica-->
+                        </div>
+                    </div><!--fi card-body1-->
+                </div>
+            </div><!--fi columna de fitxa tecnica-->
+        </div>
+
+
+
+
+
+    {#    <h1>Cicle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cicle.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ cicle.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cicle_index') }}">back to list</a>
+
+    <a href="{{ path('cicle_edit', {'id': cicle.id}) }}">edit</a>
+
+    {{ include('cicle/_delete_form.html.twig') }}#}
+{% endblock %}

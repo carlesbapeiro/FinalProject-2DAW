@@ -61,16 +61,16 @@
                                             <div class="d-flex">
                                                 <h5>{{ representant.nom }} {{ representant.cognom }} &ensp;</h5> <span><div class="text-danger"><i class="fa fa-circle" aria-hidden="true"></i> Inactiu </div></span>
                                             </div>
-                                            <span> {{ representant.telefon }}</span>
+                                            <span> {{ representant.telefon }} - {{ representant.mail  }}</span>
                                         </div>
 
                                     {% else %}
                                         <div class="col-8 p-2"> <!--Contenedor text-->
 
                                             <div class="d-flex">
-                                                <h5>{{ representant.nom }} {{ representant.cognom }}&ensp; </h5><span class="text-success"><i class="fa fa-circle" aria-hidden="true"></i> Actiu </span>
+                                                <h5>{{ representant.nom }} {{ representant.cognom  }}&ensp; </h5><span class="text-success"><i class="fa fa-circle" aria-hidden="true"></i> Actiu </span>
                                             </div>
-                                            <span> {{ representant.telefon }}</span>
+                                            <span> {{ representant.telefon }} - {{ representant.mail  }}</span>
                                         </div>
 
                                     {% endif %}

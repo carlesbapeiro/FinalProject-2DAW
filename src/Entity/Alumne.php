@@ -50,12 +50,12 @@ class Alumne
     private $alta;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Cicle::class, inversedBy="alumnes")
+     * @ORM\ManyToMany(targetEntity=Cicle::class, inversedBy="alumnes", cascade={"persist"})
      */
     private $cicle;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Professor::class, inversedBy="alumnes")
+     * @ORM\ManyToOne(targetEntity=Professor::class, inversedBy="alumnes", fetch="EAGER")
      * @ORM\JoinColumn(nullable=false)
      */
     private $professor;
@@ -163,6 +163,7 @@ class Alumne
         }
 
         return $this;
+
     }
 
     public function removeCicle(Cicle $cicle): self
@@ -212,5 +213,10 @@ class Alumne
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->nom;
     }
 }

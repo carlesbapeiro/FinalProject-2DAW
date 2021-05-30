@@ -6,6 +6,7 @@ use App\Repository\CicleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=CicleRepository::class)
@@ -21,16 +22,19 @@ class Cicle
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotNull(message="El nom es obligatori")
      */
     private $nom;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Alumne::class, mappedBy="cicle")
+     * @ORM\ManyToMany(targetEntity=Alumne::class, mappedBy="cicle", cascade={"persist"})
+     *
      */
     private $alumnes;
 
     /**
      * @ORM\OneToMany(targetEntity=Practica::class, mappedBy="cicle")
+     *
      */
     private $practiques;
 
@@ -58,7 +62,7 @@ class Cicle
     }
 
     /**
-     * @return Collection|Alumne[]
+     * @return ArrayCollection|Alumne[]
      */
     public function getAlumnes(): Collection
     {
@@ -112,5 +116,11 @@ class Cicle
         }
 
         return $this;
+    }
+
+
+    public function __toString()
+    {
+        return $this->nom;
     }
 }

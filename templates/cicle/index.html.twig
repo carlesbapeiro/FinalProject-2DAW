@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cicles{% endblock %}
+
+{% block body %}
+
+
+    <div class="row m-0 mt-5">
+
+        <div class="col-2 mt-3">
+
+            <h3>Cicles</h3>
+        </div>
+        <div class="col-3 p-0 mt-3"></div>
+
+
+        <div class="col-6 p-0 mt-3"></div>
+        <div class="col-1 mt-3">
+
+            <a href="{{ path('cicle_new') }}" class="addNewlink">
+                <div class="addNew">
+
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+    <div class="row m-0 mt-2">
+        <hr class="w-100">
+    </div>
+
+    <div class="row m-0 mt-3">
+
+        {% for cicle in cicles %}
+        <div class="col-6  py-3">
+
+            <div class="card shadow ">
+
+
+                <div class="card-body">
+                    <div class="contenedor ">
+
+                        <div class="row m-0 d-flex">
+
+                            <div class="col-10 p-2"> <!--Contenedor text-->
+
+                                <h6 class="">{{ cicle.nom }}</h6>
+                            </div>
+
+                            <div class="col-2 link-button "> <a href="{{ path('cicle_show', {'id': cicle.id}) }}"><button class="btn bg-turq "><i class="fa fa-external-link shadow-none" aria-hidden="true"></i>
+                                    </button></a></div><!--Contenedor link-->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        {% else %}
+            <div class="col-12 py-3"><h3>No s'han trobat cicles...</h3></div>
+        {% endfor %}
+
+    </div>
+
+    <div class="row m-0"><!--Row de paginacio-->
+
+        <div class="col-12 mt-3">
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link shadow-none" href="#" tabindex="-1" aria-disabled="true">Previ</a>
+                    </li>
+                    <li class="page-item "><a class="page-link color-heavyBlue shadow-none " href="#">1</a></li>
+                    <li class="page-item"><a class="page-link color-heavyBlue shadow-none" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link color-heavyBlue shadow-none" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link color-heavyBlue shadow-none" href="#">Seguent</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+
+    {#<a href="{{ path('cicle_edit', {'id': cicle.id}) }}">edit</a>#}
+
+{% endblock %}
