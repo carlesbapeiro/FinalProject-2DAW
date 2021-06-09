@@ -6,6 +6,7 @@ use App\Repository\ProfessorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProfessorRepository::class)
@@ -21,43 +22,50 @@ class Professor
 
     /**
      * @ORM\Column(type="string", length=25)
+     * @Assert\NotNull(message="El nom es obligatori")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotNull(message="El cognom es obligatori")
      */
     private $cognom;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotNull(message="El telefon es obligatori")
      */
     private $telefon;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotNull(message="El mail es obligatori")
      */
     private $mail;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotNull(message="El usuari es obligatori")
      */
     private $usuari;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotNull(message="La contrassenya es obligatoria")
      */
     private $contrassenya;
 
     /**
      * @ORM\Column(type="string", length=50)
+     *
      */
-    private $role;
+    private $role = 'Normal';
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
      */
-    private $alta;
+    private $alta = true;
 
     /**
      * @ORM\OneToMany(targetEntity=Alumne::class, mappedBy="professor")

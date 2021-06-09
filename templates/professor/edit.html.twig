@@ -3,11 +3,201 @@
 {% block title %}Edit Professor{% endblock %}
 
 {% block body %}
-    <h1>Edit Professor</h1>
+
+    {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+
+    <div class="row m-0 mt-3">
+
+
+        <div class="col-8 mt-5">
+
+            <div class="card shadow ">
+
+                <div class="card-body">
+                    <div class="contenedor bg-white">
+
+                        <div class="row m-0">
+
+                            <div class="col-12 ">
+                                <small class="small-text">Formulari d'edició de professors</small>
+                            </div>
+                        </div>
+
+                        <div class="row m-0 ">
+                            <div class="col-12 mt-2">
+
+                                <h6>Informació bàsica del professor</h6>
+                                <hr>
+
+                                <div class="form-group row m-0  mb-3">
+
+
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.nom,null, {errors: []}) }}</div>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.nom) }}
+                                            {#<input type="text"  class="form-control shadow-none" id="nom" value="" placeholder="Nom">#}
+
+                                        </div>
+                                    </div>
+                                    {{ form_errors(form.nom) }}
+                                </div>
+
+                                <div class="form-group row m-0  mb-3">
+
+
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.cognom,null, {errors: []}) }}</div>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.cognom) }}
+                                            {#<input type="text"  class="form-control shadow-none" id="nom" value="" placeholder="Nom">#}
+
+                                        </div>
+                                    </div>
+                                    {{ form_errors(form.cognom) }}
+                                </div>
+
+                                <h6 class="mt-5">Informació de contacte</h6>
+                                <hr>
+                                <div class="form-group row m-0  mb-3">
+
+
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.mail,null, {errors: []}) }}</div>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.mail) }}
+                                            {#<input type="text"  class="form-control shadow-none" id="mail" value="" placeholder="example@gmail.com">#}
+
+                                        </div>
+                                    </div>
+                                    {{ form_errors(form.mail) }}
+                                </div>
+                                <div class="form-group row m-0 mt-4 mb-3">
+
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.telefon,null, {errors: []}) }}</div>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.telefon) }}
+                                            {# <input type="text"  class="form-control shadow-none" id="tel" value="" placeholder="000000000">#}
+
+                                        </div>
+                                    </div>
+                                    {{ form_errors(form.telefon) }}
+                                </div>
+                                <h6 class="mt-5">Informació de sessió</h6>
+                                <small>Aquesta informació es crea habitualment des de l'inici de sessió</small>
+                                <div class="form-group row m-0  mb-3">
+
+                                    <label class="col-sm-2 col-form-label bg-danger text-white rounded-start" for="">{{ form_label(form.usuari,null, {errors: []}) }}</label>
+                                    <div class="col-10 p-0">
+
+                                        {{ form_widget(form.usuari) }}
+
+                                    </div>
+                                </div>
+
+                                <div class="d-none">{{ form_row(form.contrassenya) }}</div>
+
+                                <div class="form-group row m-0  mb-3">
+                                    <small class="p-0">Has oblidat la teua contrassenya?</small>
+                                    <div class="col-sm-5 col-form-label p-0">
+
+                                        <button class="  bg-danger text-white btn" type="submit" >
+                                                <div class="contenedor">
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            Canviar contrassenya &ensp; <i class="fas fa-lock-open"></i></div>
+                                                </div>
+
+                                        </button>
+                                    </div>
+                                    <div class="col-7 p-0">
+
+                                    </div>
+
+                                </div>
+
+                                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div><!--fi card-body1-->
+
+            </div>
+
+
+        </div><!--fi columna principal-->
+
+        <div class="col-4">
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="row m-0">
+        <div class="col-4 mt-2 ">
+
+            <div class="card shadow h-100 containerBlue ">
+
+                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                    <div class="card-body">
+                        <div class="contenedor">
+
+                            <div class="h-100">
+
+                                <div class="d-flex justify-content-center align-items-center">
+                                    Validar les dades &ensp; <i class="fa fa-check" aria-hidden="true"></i></div>
+
+                            </div>
+                        </div>
+
+                    </div><!--fi card-body1-->
+                </button>
+            </div>
+        </div>
+        <div class="col-4 mt-2  ">
+            <div class="card shadow h-100 containerBlue">
+                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                    <div class="card-body">
+                        <div class="contenedor">
+
+                            <div class="h-100">
+
+                                <div class="d-flex justify-content-center align-items-center">
+                                    Crear &ensp; <i class="fa fa-plus" aria-hidden="true"></i></div>
+
+                            </div>
+                        </div>
+
+                    </div><!--fi card-body1-->
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    {{ form_end(form) }}
+{#    <h1>Edit Professor</h1>
 
     {{ include('professor/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('professor_index') }}">back to list</a>
 
-    {{ include('professor/_delete_form.html.twig') }}
+    {{ include('professor/_delete_form.html.twig') }}#}
 {% endblock %}

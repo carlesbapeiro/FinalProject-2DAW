@@ -18,8 +18,6 @@ class ProfessorType extends AbstractType
             ->add('mail')
             ->add('usuari')
             ->add('contrassenya')
-            ->add('role')
-            ->add('alta')
         ;
     }
 

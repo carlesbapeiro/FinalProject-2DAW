@@ -68,13 +68,35 @@ class AlumneController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'alumne_delete', methods: ['POST'])]
+/*    #[Route('/{id}', name: 'alumne_delete', methods: ['POST'])]
     public function delete(Request $request, Alumne $alumne): Response
     {
         if ($this->isCsrfTokenValid('delete'.$alumne->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($alumne);
             $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('alumne_index');
+    }*/
+
+
+    #[Route('/{id}', name: 'alumne_alta', methods: ['POST'])]
+    public function alta(Request $request, Alumne $alumne): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$alumne->getId(), $request->request->get('_token'))) {
+
+            $alta = $alumne->getAlta();
+            if($alta == true){
+                $alumne->setAlta(false);
+            }else{
+                $alumne->setAlta(true);
+            }
+
+            $this->getDoctrine()->getManager()->flush();
+            /*
+            $entityManager->remove($representant);
+            $entityManager->flush();*/
         }
 
         return $this->redirectToRoute('alumne_index');

@@ -1,9 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nou Professor{% endblock %}
+{% block title %}Nova Practica{% endblock %}
 
 {% block body %}
-
     {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
 
     <div class="row m-0 mt-3">
@@ -19,98 +18,82 @@
                         <div class="row m-0">
 
                             <div class="col-12 ">
-                                <small class="small-text">Formulari de creació de professors</small>
+                                <small class="small-text">Formulari de creació de practiques</small>
                             </div>
                         </div>
 
                         <div class="row m-0 ">
                             <div class="col-12 mt-2">
-
-                                <h6>Informació bàsica del professor</h6>
                                 <hr>
 
                                 <div class="form-group row m-0  mb-3">
 
 
-                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.nom,null, {errors: []}) }}</div>
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.alumne,null, {errors: []}) }}</div>
                                     <div class="col-10 p-0">
                                         <div class="input-group">
 
-                                            {{ form_widget(form.nom) }}
+                                            {{ form_widget(form.alumne) }}
                                             {#<input type="text"  class="form-control shadow-none" id="nom" value="" placeholder="Nom">#}
 
                                         </div>
                                     </div>
-                                    {{ form_errors(form.nom) }}
+                                    {{ form_errors(form.alumne) }}
                                 </div>
 
                                 <div class="form-group row m-0  mb-3">
 
 
-                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.cognom,null, {errors: []}) }}</div>
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.empresa,null, {errors: []}) }}</div>
                                     <div class="col-10 p-0">
                                         <div class="input-group">
 
-                                            {{ form_widget(form.cognom) }}
+                                            {{ form_widget(form.empresa) }}
                                             {#<input type="text"  class="form-control shadow-none" id="nom" value="" placeholder="Nom">#}
 
                                         </div>
                                     </div>
-                                    {{ form_errors(form.cognom) }}
+                                    {{ form_errors(form.empresa) }}
                                 </div>
 
-                                <h6 class="mt-5">Informació de contacte</h6>
-                                <hr>
                                 <div class="form-group row m-0  mb-3">
 
-
-                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.mail,null, {errors: []}) }}</div>
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.periode,null, {errors: []}) }}</div>
                                     <div class="col-10 p-0">
                                         <div class="input-group">
-
-                                            {{ form_widget(form.mail) }}
-                                            {#<input type="text"  class="form-control shadow-none" id="mail" value="" placeholder="example@gmail.com">#}
-
-                                        </div>
-                                    </div>
-                                    {{ form_errors(form.mail) }}
-                                </div>
-                                <div class="form-group row m-0 mt-4 mb-3">
-
-                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.telefon,null, {errors: []}) }}</div>
-                                    <div class="col-10 p-0">
-                                        <div class="input-group">
-
-                                            {{ form_widget(form.telefon) }}
-                                            {# <input type="text"  class="form-control shadow-none" id="tel" value="" placeholder="000000000">#}
-
-                                        </div>
-                                    </div>
-                                    {{ form_errors(form.telefon) }}
-                                </div>
-                                <h6 class="mt-5">Informació de sessió</h6>
-                                <small>Aquesta informació es crea habitualment des de l'inici de sessió</small>
-                                <div class="form-group row m-0  mb-3">
-
-                                    <label class="col-sm-2 col-form-label bg-danger text-white rounded-start" for="">{{ form_label(form.usuari,null, {errors: []}) }}</label>
-                                    <div class="col-10 p-0">
-
-                                        {{ form_widget(form.usuari) }}
-
-                                    </div>
-                                    {{ form_errors(form.usuari) }}
-                                </div>
-                                <div class="form-group row m-0  mb-3">
-
-                                    <div class="col-sm-2 col-form-label bg-danger text-white rounded-start">{{ form_label(form.contrassenya,null, {errors: []}) }}</div>
-                                    <div class="col-10 p-0">
-                                        <div class="input-group">
-                                            {{ form_widget(form.contrassenya) }}
+                                            {{ form_widget(form.periode) }}
                                             {#<input type="text"  class="form-control shadow-none" id="poblacio" value="" placeholder="Valencia">#}
 
                                         </div>
                                     </div>
-                                    {{ form_errors(form.contrassenya) }}
+                                    {{ form_errors(form.periode) }}
+                                </div>
+                                <div class="form-group row m-0  mb-3">
+
+
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.data,null, {errors: []}) }}</div>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.data) }}
+                                            {#<input type="text"  class="form-control shadow-none" id="mail" value="" placeholder="example@gmail.com">#}
+
+                                        </div>
+                                    </div>
+                                    {{ form_errors(form.data) }}
+                                </div>
+                                <div class="form-group row m-0 mt-4 mb-3">
+
+                                    <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.observacions,null, {errors: []}) }}</div>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+                                            {{ form_widget(form.observacions) }}
+                                            {# <input type="text"  class="form-control shadow-none" id="tel" value="" placeholder="000000000">#}
+
+                                        </div>
+                                    </div>
+                                    {{ form_errors(form.observacions) }}
                                 </div>
 
                                 <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
@@ -135,9 +118,6 @@
         <div class="col-4">
 
         </div>
-
-
-
 
 
     </div>
@@ -186,9 +166,9 @@
 
 
     {{ form_end(form) }}
-{#    <h1>Create new Professor</h1>
+{#    <h1>Create new Practica</h1>
 
-    {{ include('professor/_form.html.twig') }}
+    {{ include('practica/_form.html.twig') }}
 
-    <a href="{{ path('professor_index') }}">back to list</a>#}
+    <a href="{{ path('practica_index') }}">back to list</a>#}
 {% endblock %}

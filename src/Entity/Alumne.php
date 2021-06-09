@@ -6,6 +6,7 @@ use App\Repository\AlumneRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AlumneRepository::class)
@@ -21,42 +22,48 @@ class Alumne
 
     /**
      * @ORM\Column(type="string", length=25)
+     * @Assert\NotNull(message="El nom es obligatori")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotNull(message="El cognom es obligatori")
      */
     private $cognom;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotNull(message="El telefon es obligatori")
      */
     private $telefon;
 
     /**
      * @ORM\Column(type="string", length=250)
+     * @Assert\NotNull(message="La direcció es obligatoria")
      */
     private $direccio;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $observacions;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
      */
-    private $alta;
+    private $alta = true;
 
     /**
      * @ORM\ManyToMany(targetEntity=Cicle::class, inversedBy="alumnes", cascade={"persist"})
+     * @Assert\NotNull(message="El cicle es obligatori")
      */
     private $cicle;
 
     /**
      * @ORM\ManyToOne(targetEntity=Professor::class, inversedBy="alumnes", fetch="EAGER")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull(message="El professor es obligatori")
      */
     private $professor;
 
@@ -124,16 +131,20 @@ class Alumne
         return $this;
     }
 
-    public function getObservacions(): ?string
+    /**
+     * @return mixed
+     */
+    public function getObservacions()
     {
         return $this->observacions;
     }
 
-    public function setObservacions(?string $observacions): self
+    /**
+     * @param mixed $observacions
+     */
+    public function setObservacions($observacions): void
     {
         $this->observacions = $observacions;
-
-        return $this;
     }
 
     public function getAlta(): ?bool

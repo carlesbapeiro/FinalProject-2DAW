@@ -27,7 +27,7 @@ class Practica
     /**
      * @ORM\Column(type="date")
      */
-    private $any;
+    private $data;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -39,18 +39,6 @@ class Practica
      * @ORM\JoinColumn(nullable=false)
      */
     private $alumne;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Cicle::class, inversedBy="practiques")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $cicle;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Professor::class, inversedBy="practiques")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $professor;
 
     /**
      * @ORM\ManyToOne(targetEntity=Empresa::class, inversedBy="practiques")
@@ -84,17 +72,24 @@ class Practica
         return $this;
     }
 
-    public function getAny(): ?\DateTimeInterface
+    /**
+     * @return mixed
+     */
+    public function getData()
     {
-        return $this->any;
+        return $this->data;
     }
 
-    public function setAny(\DateTimeInterface $any): self
+    /**
+     * @param mixed $data
+     */
+    public function setData($data): void
     {
-        $this->any = $any;
-
-        return $this;
+        $this->data = $data;
     }
+
+
+
 
     public function getObservacions(): ?string
     {

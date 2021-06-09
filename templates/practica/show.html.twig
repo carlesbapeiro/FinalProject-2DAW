@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Practica{% endblock %}
+
+{% block body %}
+    <h1>Practica</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ practica.id }}</td>
+            </tr>
+            <tr>
+                <th>Periode</th>
+                <td>{{ practica.periode }}</td>
+            </tr>
+            <tr>
+                <th>Data</th>
+                <td>{{ practica.data ? practica.data|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Observacions</th>
+                <td>{{ practica.observacions }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('practica_index') }}">back to list</a>
+
+    <a href="{{ path('practica_edit', {'id': practica.id}) }}">edit</a>
+
+    {{ include('practica/_delete_form.html.twig') }}
+{% endblock %}

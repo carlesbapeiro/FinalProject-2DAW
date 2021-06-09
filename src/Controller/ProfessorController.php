@@ -67,16 +67,24 @@ class ProfessorController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
-    #[Route('/{id}', name: 'professor_delete', methods: ['POST'])]
-    public function delete(Request $request, Professor $professor): Response
+    #[Route('/{id}', name: 'professor_alta', methods: ['POST'])]
+    public function alta(Request $request, Professor $professor): Response
     {
         if ($this->isCsrfTokenValid('delete'.$professor->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($professor);
-            $entityManager->flush();
+
+            $alta = $professor->getAlta();
+            if($alta == true){
+                $professor->setAlta(false);
+            }else{
+                $professor->setAlta(true);
+            }
+
+            $this->getDoctrine()->getManager()->flush();
+            /*
+            $entityManager->remove($representant);
+            $entityManager->flush();*/
         }
 
-        return $this->redirectToRoute('professor_index');
+        return $this->redirectToRoute('representant_index');
     }
 }

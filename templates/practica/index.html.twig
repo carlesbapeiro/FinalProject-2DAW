@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Professor{% endblock %}
+{% block title %}Practica index{% endblock %}
 
 {% block body %}
+
 
     <div class="row m-0 mt-5 ">
 
         <div class=" col-sm-2 col-md-2 col-lg-2 mt-3">
 
-            <h3>Professors</h3>
+            <h3>Practiques</h3>
         </div>
         <div class="d-none d-sm-block col-sm-3 col-md-3 col-lg-3 p-0 mt-3"></div>
 
@@ -16,7 +17,7 @@
         <div class="d-none d-sm-block col-sm-4 col-md-5 col-lg-6 p-0 mt-3"></div>
         <div class="col-sm-3 col-md-2 col-lg-1 mt-3">
 
-            <a href="{{ path('professor_new') }}" class="addNewlink">
+            <a href="{{ path('practica_new') }}" class="addNewlink">
                 <div class="addNew">
 
                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -31,40 +32,34 @@
     </div>
 
     <div class="row m-0 mt-3"> <!-- row empreses-->
-    {% for professor in professors %}
+    {% for practica in practicas %}
+
         <div class="col-sm-12 col-md-6 col-lg-6 py-3 "> <!-- primer col 6-->
 
             <div class="card shadow ">
+
+
                 <div class="card-body">
                     <div class="contenedor bg-white">
+
                         <div class="row m-0">
+
                             <div class="d-none d-md-block col-sm-2 col-md-2 col-lg-2 p-2 "><!--Contenedor foto-->
+
                                 <div class="icon-photo">
-                                    <i class="fas fa-book"></i>
+
+                                    <i class="fa fa-id-badge" aria-hidden="true"></i>
                                 </div>
                             </div>
-                            {% if professor.alta == false %}
+                            <div class="col-8 p-2"> <!--Contenedor text-->
 
-                                <div class="col-8 p-2"> <!--Contenedor text-->
-                                    <div class="d-flex">
-                                        <h5>{{ professor.nom }} {{ professor.cognom }} &ensp;</h5> <span><div class="text-danger"><i class="fa fa-circle" aria-hidden="true"></i> Inactiu </div></span>
-                                    </div>
-                                    <span> {{ professor.telefon }} - {{ professor.mail  }}</span>
+                                <div class="d-flex">
+                                    <h5>{{ practica.alumne.nom }} - {{ practica.empresa.nom  }} </h5>
                                 </div>
+                                <span> {{ practica.periode}}/{{ practica.data ? practica.data|date('Y') : '' }}</span>
+                            </div>
 
-                            {% else %}
-                                <div class="col-8 p-2"> <!--Contenedor text-->
-
-                                    <div class="d-flex">
-                                        <h5>{{ professor.nom }} {{ professor.cognom  }}&ensp; </h5><span class="text-success"><i class="fa fa-circle" aria-hidden="true"></i> Actiu </span>
-                                    </div>
-                                    <span> {{ professor.telefon }} - {{ professor.mail  }}</span>
-                                </div>
-
-                            {% endif %}
-
-
-                            <div class="col-2 link-button "> <a href="{{ path('professor_show', {'id': professor.id}) }}"><button class="btn bg-turq shadow-none "><i class="fa fa-external-link shadow-none" aria-hidden="true"></i>
+                            <div class="col-2 link-button "> <a href="{{ path('practica_show', {'id': practica.id}) }}"><button class="btn bg-turq shadow-none "><i class="fa fa-external-link shadow-none" aria-hidden="true"></i>
                                     </button></a></div><!--Contenedor link-->
 
 
@@ -76,14 +71,13 @@
             </div>
 
         </div> <!-- fi primer col 6 -->
-        {#        {% endif %}#}
     {% else %}
         </div>
         <div class="row m-0">
 
             <div class="col-12 py-3">
 
-                <h5>No s'han trobat registres de professors. <a href="{{ path('professor_new') }}">Crear professor</a></h5>
+                <h5>No s'han trobat registres de practiques. <a href="{{ path('practica_new') }}">Crear practica</a></h5>
             </div>
 
         </div>
@@ -110,47 +104,37 @@
         </div>
 
     </div>
-   {# <h1>Professor index</h1>
+    {#<h1>Practica index</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom</th>
-                <th>Cognom</th>
-                <th>Telefon</th>
-                <th>Mail</th>
-                <th>Usuari</th>
-                <th>Contrassenya</th>
-                <th>Role</th>
-                <th>Alta</th>
+                <th>Periode</th>
+                <th>Any</th>
+                <th>Observacions</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for professor in professors %}
+        {% for practica in practicas %}
             <tr>
-                <td>{{ professor.id }}</td>
-                <td>{{ professor.nom }}</td>
-                <td>{{ professor.cognom }}</td>
-                <td>{{ professor.telefon }}</td>
-                <td>{{ professor.mail }}</td>
-                <td>{{ professor.usuari }}</td>
-                <td>{{ professor.contrassenya }}</td>
-                <td>{{ professor.role }}</td>
-                <td>{{ professor.alta ? 'Yes' : 'No' }}</td>
+                <td>{{ practica.id }}</td>
+                <td>{{ practica.periode }}</td>
+                <td>{{ practica.any ? practica.any|date('Y-m-d') : '' }}</td>
+                <td>{{ practica.observacions }}</td>
                 <td>
-                    <a href="{{ path('professor_show', {'id': professor.id}) }}">show</a>
-                    <a href="{{ path('professor_edit', {'id': professor.id}) }}">edit</a>
+                    <a href="{{ path('practica_show', {'id': practica.id}) }}">show</a>
+                    <a href="{{ path('practica_edit', {'id': practica.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('professor_new') }}">Create new</a>#}
+    <a href="{{ path('practica_new') }}">Create new</a>#}
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Practica{% endblock %}
+
+{% block body %}
+    <h1>Edit Practica</h1>
+
+    {{ include('practica/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('practica_index') }}">back to list</a>
+
+    {{ include('practica/_delete_form.html.twig') }}
+{% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Empresa;
+use App\Entity\Professor;
 use App\Form\EmpresaType;
 use App\Repository\EmpresaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -84,4 +85,6 @@ class EmpresaController extends AbstractController
 
         return $this->redirectToRoute('empresa_index');
     }
+
+
 }
