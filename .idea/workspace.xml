@@ -19,30 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="Solucio d'errors amb cicle degut a relacio manyTomany">
+    <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="Solucio de les migracions i creacio del crud Alumnes, Professors i practica">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210526192724.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210526192724.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AlumneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AlumneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EmpresaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmpresaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProfessorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfessorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Accio.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Accio.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Alumne.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Alumne.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cicle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Empresa.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Practica.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Practica.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Professor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/AlumneType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/AlumneType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProfessorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProfessorType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/alumne/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alumne/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/alumne/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alumne/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/alumne/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alumne/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/alumne/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alumne/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PracticaType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PracticaType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cicle/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cicle/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/professor/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/professor/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/professor/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/professor/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/professor/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/professor/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/representant/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/representant/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cicle/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cicle/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/practica/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/practica/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/practica/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/practica/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,6 +209,9 @@
       <workItem from="1622647427431" duration="120000" />
       <workItem from="1622647648841" duration="266000" />
       <workItem from="1623164142214" duration="8156000" />
+      <workItem from="1623229826406" duration="1385000" />
+      <workItem from="1623252880747" duration="5915000" />
+      <workItem from="1623335746039" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="Cicles i algunes millores">
       <created>1622053095039</created>
@@ -256,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622391502262</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Solucio de les migracions i creacio del crud Alumnes, Professors i practica">
+      <created>1623229886477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623229886477</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,17 +278,18 @@
     <MESSAGE value="Creacio d'entitats i relacions" />
     <MESSAGE value="Crud de cicles aixi com la creacio, esborrada, index i formularis adaptats" />
     <MESSAGE value="Solucio d'errors amb cicle degut a relacio manyTomany" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solucio d'errors amb cicle degut a relacio manyTomany" />
+    <MESSAGE value="Solucio de les migracions i creacio del crud Alumnes, Professors i practica" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solucio de les migracions i creacio del crud Alumnes, Professors i practica" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2673" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1623171757247">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2673" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623171757247" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623169740709">
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623256671022">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623169740709" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623256671022" />
     <state x="552" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1622478267579" />
     <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1622275068604">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -300,13 +300,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1619280950014" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1622391507868">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1623229887854">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622391507868" />
-    <state x="2536" y="240" key="run.anything.popup" timestamp="1622141863608">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623229887854" />
+    <state x="2536" y="240" key="run.anything.popup" timestamp="1623253881769">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2536" y="240" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622141863608" />
+    <state x="2536" y="240" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623253881769" />
   </component>
 </project>

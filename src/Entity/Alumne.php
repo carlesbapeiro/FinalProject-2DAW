@@ -88,7 +88,7 @@ class Alumne
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    public function setNom(?string $nom): self
     {
         $this->nom = $nom;
 
@@ -100,7 +100,7 @@ class Alumne
         return $this->cognom;
     }
 
-    public function setCognom(string $cognom): self
+    public function setCognom(?string $cognom): self
     {
         $this->cognom = $cognom;
 
@@ -112,7 +112,7 @@ class Alumne
         return $this->telefon;
     }
 
-    public function setTelefon(int $telefon): self
+    public function setTelefon(?int $telefon): self
     {
         $this->telefon = $telefon;
 
@@ -124,7 +124,7 @@ class Alumne
         return $this->direccio;
     }
 
-    public function setDireccio(string $direccio): self
+    public function setDireccio(?string $direccio): self
     {
         $this->direccio = $direccio;
 
@@ -142,7 +142,7 @@ class Alumne
     /**
      * @param mixed $observacions
      */
-    public function setObservacions($observacions): void
+    public function setObservacions(? string $observacions): void
     {
         $this->observacions = $observacions;
     }

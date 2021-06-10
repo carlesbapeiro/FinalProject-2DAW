@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\AccioRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AccioRepository::class)
@@ -19,31 +20,42 @@ class Accio
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotNull(message="El titol es obligatori")
      */
     private $titol;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotNull(message="El cos es obligatori")
      */
     private $cos;
 
     /**
      * @ORM\ManyToOne(targetEntity=Professor::class, inversedBy="accions")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull(message="El professor es obligatori")
      */
     private $professor;
 
     /**
      * @ORM\ManyToOne(targetEntity=Representant::class, inversedBy="accions")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull(message="El representant es obligatori")
      */
     private $representant;
 
     /**
      * @ORM\ManyToOne(targetEntity=Practica::class, inversedBy="accions")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull(message="Les practiques son obligatories")
      */
     private $practica;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @Assert\NotNull(message="La data es obligatoria")
+     */
+    private $data;
 
     public function getId(): ?int
     {
@@ -55,7 +67,7 @@ class Accio
         return $this->titol;
     }
 
-    public function setTitol(string $titol): self
+    public function setTitol(?string $titol): self
     {
         $this->titol = $titol;
 
@@ -67,7 +79,7 @@ class Accio
         return $this->cos;
     }
 
-    public function setCos(string $cos): self
+    public function setCos(?string $cos): self
     {
         $this->cos = $cos;
 
@@ -106,6 +118,18 @@ class Accio
     public function setPractica(?Practica $practica): self
     {
         $this->practica = $practica;
+
+        return $this;
+    }
+
+    public function getData(): ?\DateTimeInterface
+    {
+        return $this->data;
+    }
+
+    public function setData(?\DateTimeInterface $data): self
+    {
+        $this->data = $data;
 
         return $this;
     }

@@ -91,7 +91,7 @@ class Empresa
         return $this->cif;
     }
 
-    public function setCif(string $cif): self
+    public function setCif(?string $cif): self
     {
         $this->cif = $cif;
 
@@ -103,7 +103,7 @@ class Empresa
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    public function setNom(?string $nom): self
     {
         $this->nom = $nom;
 
@@ -115,7 +115,7 @@ class Empresa
         return $this->telefon;
     }
 
-    public function setTelefon(int $telefon): self
+    public function setTelefon(?int $telefon): self
     {
         $this->telefon = $telefon;
 
@@ -127,7 +127,7 @@ class Empresa
         return $this->mail;
     }
 
-    public function setMail(string $mail): self
+    public function setMail(?string $mail): self
     {
         $this->mail = $mail;
 
@@ -139,7 +139,7 @@ class Empresa
         return $this->adresa;
     }
 
-    public function setAdresa(string $adresa): self
+    public function setAdresa(?string $adresa): self
     {
         $this->adresa = $adresa;
 
@@ -240,5 +240,9 @@ class Empresa
         }
 
         return $this;
+    }
+
+    public function __toString() {
+        return $this->nom;
     }
 }

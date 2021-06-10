@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -28,7 +29,7 @@ class PracticaType extends AbstractType
                 'widget' => 'single_text',
 
             ])
-            ->add('observacions')
+            ->add('observacions',TextareaType::class)
             ->add('alumne', EntityType::class,
                 ['class' => Alumne::class,
                     'choice_label' => 'nom',

@@ -99,7 +99,7 @@ class Professor
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    public function setNom(?string $nom): self
     {
         $this->nom = $nom;
 
@@ -111,7 +111,7 @@ class Professor
         return $this->cognom;
     }
 
-    public function setCognom(string $cognom): self
+    public function setCognom(?string $cognom): self
     {
         $this->cognom = $cognom;
 
@@ -123,7 +123,7 @@ class Professor
         return $this->telefon;
     }
 
-    public function setTelefon(int $telefon): self
+    public function setTelefon(?int $telefon): self
     {
         $this->telefon = $telefon;
 
@@ -135,7 +135,7 @@ class Professor
         return $this->mail;
     }
 
-    public function setMail(string $mail): self
+    public function setMail(?string $mail): self
     {
         $this->mail = $mail;
 
@@ -147,7 +147,7 @@ class Professor
         return $this->usuari;
     }
 
-    public function setUsuari(string $usuari): self
+    public function setUsuari(?string $usuari): self
     {
         $this->usuari = $usuari;
 
@@ -159,7 +159,7 @@ class Professor
         return $this->contrassenya;
     }
 
-    public function setContrassenya(string $contrassenya): self
+    public function setContrassenya(?string $contrassenya): self
     {
         $this->contrassenya = $contrassenya;
 
@@ -171,7 +171,7 @@ class Professor
         return $this->role;
     }
 
-    public function setRole(string $role): self
+    public function setRole(?string $role): self
     {
         $this->role = $role;
 

@@ -6,6 +6,7 @@ use App\Repository\PracticaRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PracticaRepository::class)
@@ -21,11 +22,13 @@ class Practica
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotNull(message="El periode es obligatori")
      */
     private $periode;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotNull(message="La data es obligatoria")
      */
     private $data;
 
@@ -37,11 +40,13 @@ class Practica
     /**
      * @ORM\ManyToOne(targetEntity=Alumne::class, inversedBy="practiques")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull(message="L'alumne es obligatori")
      */
     private $alumne;
 
     /**
      * @ORM\ManyToOne(targetEntity=Empresa::class, inversedBy="practiques")
+     * @Assert\NotNull(message="L'empresa es obligatoria")
      */
     private $empresa;
 
@@ -65,7 +70,7 @@ class Practica
         return $this->periode;
     }
 
-    public function setPeriode(string $periode): self
+    public function setPeriode(?string $periode): self
     {
         $this->periode = $periode;
 
@@ -83,7 +88,7 @@ class Practica
     /**
      * @param mixed $data
      */
-    public function setData($data): void
+    public function setData(?\DateTimeInterface $data): void
     {
         $this->data = $data;
     }
