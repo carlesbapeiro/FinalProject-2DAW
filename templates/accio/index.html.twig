@@ -10,7 +10,18 @@
 
             <h3>Accions</h3>
         </div>
-        <div class="d-none d-sm-block col-sm-3 col-md-3 col-lg-3 p-0 mt-3"></div>
+        <div class="d-none d-sm-block col-sm-3 col-md-3 col-lg-3 p-0 mt-3">
+            <nav aria-label="">
+                <ul class="pagination m-0">
+                    <li class="page-item disabled">
+                        <a class="page-link shadow-none" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-angle-left"></i></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link color-heavyBlue shadow-none" href="#"><i class="fas fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
 
         <div class="d-none d-sm-block col-sm-4 col-md-5 col-lg-6 p-0 mt-3"></div>
@@ -75,58 +86,4 @@
         </div>
 
     {% endfor %}
-
-    <div class="row m-0"><!--Row de paginacio-->
-
-        <div class="col-12 mt-3">
-
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link shadow-none" href="#" tabindex="-1" aria-disabled="true">Previ</a>
-                    </li>
-                    <li class="page-item "><a class="page-link color-heavyBlue shadow-none " href="#">1</a></li>
-                    <li class="page-item"><a class="page-link color-heavyBlue shadow-none" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link color-heavyBlue shadow-none" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link color-heavyBlue shadow-none" href="#">Seguent</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-    </div>
-   {# <h1>Accio index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titol</th>
-                <th>Cos</th>
-                <th>Data</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for accio in accios %}
-            <tr>
-                <td>{{ accio.id }}</td>
-                <td>{{ accio.titol }}</td>
-                <td>{{ accio.cos }}</td>
-                <td>{{ accio.data ? accio.data|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('accio_show', {'id': accio.id}) }}">show</a>
-                    <a href="{{ path('accio_edit', {'id': accio.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('accio_new') }}">Create new</a>#}
 {% endblock %}

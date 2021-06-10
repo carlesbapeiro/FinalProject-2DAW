@@ -12,7 +12,18 @@
 
             <h3>Alumnes</h3>
         </div>
-        <div class="d-none d-sm-block col-sm-3 col-md-3 col-lg-3 p-0 mt-3"></div>
+        <div class="d-none d-sm-block col-sm-3 col-md-3 col-lg-3 p-0 mt-3">
+            <nav aria-label="">
+                <ul class="pagination m-0">
+                    <li class="page-item disabled">
+                        <a class="page-link shadow-none" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-angle-left"></i></a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link color-heavyBlue shadow-none" href="#"><i class="fas fa-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
 
         <div class="d-none d-sm-block col-sm-4 col-md-5 col-lg-6 p-0 mt-3"></div>
@@ -104,65 +115,4 @@
 
     {% endfor %}
 
-    <div class="row m-0"><!--Row de paginacio-->
-
-        <div class="col-12 mt-3">
-
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link shadow-none" href="#" tabindex="-1" aria-disabled="true">Previ</a>
-                    </li>
-                    <li class="page-item "><a class="page-link color-heavyBlue shadow-none " href="#">1</a></li>
-                    <li class="page-item"><a class="page-link color-heavyBlue shadow-none" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link color-heavyBlue shadow-none" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link color-heavyBlue shadow-none" href="#">Seguent</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-    </div>
 {% endblock %}
-
-    {#<h1>Alumne index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Cognom</th>
-                <th>Telefon</th>
-                <th>Direccio</th>
-                <th>Observacions</th>
-                <th>Alta</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for alumne in alumnes %}
-            <tr>
-                <td>{{ alumne.id }}</td>
-                <td>{{ alumne.nom }}</td>
-                <td>{{ alumne.cognom }}</td>
-                <td>{{ alumne.telefon }}</td>
-                <td>{{ alumne.direccio }}</td>
-                <td>{{ alumne.observacions }}</td>
-                <td>{{ alumne.alta ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('alumne_show', {'id': alumne.id}) }}">show</a>
-                    <a href="{{ path('alumne_edit', {'id': alumne.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('alumne_new') }}">Create new</a>#}
-

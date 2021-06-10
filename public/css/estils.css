@@ -36,6 +36,10 @@
 .color-turq{
     color: #3a9748 !important;
 }
+textarea[readonly]
+{
+    background-color:white;
+}
 .card-body{
     padding: 0.5rem !important;
 }

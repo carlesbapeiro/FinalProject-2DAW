@@ -186,7 +186,7 @@
 
                         <div class="card-header">
 
-                            <h5 class="m-0 titol-informacio">Accions relacionades</h5>
+                            <h5 class="m-0 titol-informacio">Practiques</h5>
 
                         </div>
 
@@ -195,111 +195,38 @@
 
                             <div class="contenedor bg-white">
 
-                                <div class="row m-0">
+
+                                {% set contador = 0 %}
+
+                                    {% for practica in alumne.practiques %}
+                                        <div class=" row m-0 mt-2">
+
+                                            <div class="col-12 p-0">
+                                                <div class="input-group">
 
 
-                                    <div class="col-2 p-2 ">
-                                        <div class="subcontainer">
-                                            <h6 class="mb-0">05/12/22</h6>
+                                                    <input type="text" readonly class="form-control shadow-none" id="inlineFormInputGroup" value="{{ practica.alumne.nom}} {{ practica.alumne.cognom }} - {{ practica.empresa.nom }}">
+                                                    <div class="input-group-prepend ">
+                                                        <div class="input-group-text bg-light h-100">
+
+                                                            <a href="{{ path('practica_show', {'id': practica.id}) }}"><i class="fas fa-arrow-right"></i></a>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
-
-                                    </div>
-
-                                    <div class="col-8 bg-white p-2 ">
-
-                                        <div class="subcontainer">
-
-                                            <h6 class="mb-0">Vicent Jorda - Arribant a un acord - Fes-te web</h6>
-
-                                        </div>
-
-                                    </div>
+                                        {% set contador = contador + 1%}
 
 
-                                    <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
-                                        </button></div>
+                                    {% endfor  %}
+
+                                {% if contador == 0 %}
+                                    <span>No s'ha trobat cap practica</span>
+                                {% endif %}
 
 
-
-                                </div>
-                                <div class="row m-0">
-
-
-                                    <div class="col-2 p-2 ">
-                                        <div class="subcontainer">
-                                            <h6 class="mb-0">05/12/22</h6>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-8 bg-white p-2 ">
-
-                                        <div class="subcontainer">
-
-                                            <h6 class="mb-0">Vicent Jorda - Arribant a un acord - Fes-te web</h6>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
-                                        </button></div>
-
-
-
-                                </div>
-                                <div class="row m-0">
-
-
-                                    <div class="col-2 p-2 ">
-                                        <div class="subcontainer">
-                                            <h6 class="mb-0">05/12/22</h6>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-8 bg-white p-2 ">
-
-                                        <div class="subcontainer">
-
-                                            <h6 class="mb-0">Vicent Jorda - Arribant a un acord - Fes-te web</h6>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
-                                        </button></div>
-
-
-
-                                </div>
-                                <div class="row m-0">
-
-
-                                    <div class="col-2 p-2 ">
-                                        <div class="subcontainer">
-                                            <h6 class="mb-0">05/12/22</h6>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-8 bg-white p-2 ">
-
-                                        <div class="subcontainer">
-
-                                            <h6 class="mb-0">Vicent Jorda - Arribant a un acord - Fes-te web</h6>
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
-                                        </button></div>
-                                </div>
                             </div>
 
                         </div>

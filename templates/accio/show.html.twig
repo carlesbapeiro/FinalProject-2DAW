@@ -3,7 +3,175 @@
 {% block title %}Accio{% endblock %}
 
 {% block body %}
-    <h1>Accio</h1>
+
+    <div class="row m-0">
+
+
+        <div class="col-12 mt-5">
+
+            <div class="card shadow ">
+
+                <div class="card-body">
+                    <div class="contenedor bg-white">
+
+                        <div class="row m-0">
+
+                            <div class="col-8 ">
+                                <small class="small-text">Fitxa tecnica de l'accio</small>
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-2 d-flex justify-content-end">
+                                {{ accio.data|date('Y-m-d') }}
+                            </div>
+
+                        </div>
+                        <div class="row m-0 mt-3  ">
+
+                            <div class="col-12 text-center">
+                                <h4 class="bg-turqNoEmbed py-2 ">{{ accio.titol}}</h4>
+                            </div>
+                            <div class="col-6">
+
+                                <div class="form-group row m-0  mt-3 mb-3">
+
+                                    <label class="col-sm-2 col-form-label bg-secondary text-white rounded-start" for="exampleInputEmail1">Practica</label>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+
+                                            <input type="text" readonly class="form-control shadow-none" id="inlineFormInputGroup" value="{{ accio.practica.alumne.nom}} {{ accio.practica.alumne.cognom }} - {{ accio.practica.empresa.nom }}">
+                                            <div class="input-group-prepend ">
+                                                <div class="input-group-text bg-light h-100">
+
+                                                    <a href="{{ path('practica_show', {'id': accio.practica.id}) }}"><i class="fas fa-arrow-right"></i></a>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-6 ">
+                                <div class="form-group row m-0 mt-3 mb-3">
+
+                                    <label class="col-sm-2 col-form-label bg-secondary text-white rounded-start" for="exampleInputEmail1">Professor</label>
+                                    <div class="col-10 p-0">
+                                        <div class="input-group">
+
+
+                                            <input type="text" readonly class="form-control shadow-none" id="inlineFormInputGroup" value="{{ accio.professor.nom}} {{ accio.professor.cognom}}">
+                                            <div class="input-group-prepend ">
+                                                <div class="input-group-text bg-light h-100">
+
+                                                    <a href="{{ path('professor_show', {'id': accio.professor.id}) }}"><i class="fas fa-arrow-right"></i></a>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-8 text-center py-3">
+
+{#                                <h6 class="pb-3"></h6>#}
+                                <textarea class="form-control" readonly id="exampleFormControlTextarea1" rows="5">{{ accio.cos }}</textarea>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="row m-0 mb-2">
+
+                                    <div class="col-12 mt-2 ">
+
+                                        <div class="card shadow h-100 containerBlue ">
+                                            <form method="get" action="{{ path('accio_edit', {'id': accio.id}) }}">
+                                                <button class="common-link color-heavyBlue btn w-100" type="submit" >
+                                                    <div class="card-body">
+                                                        <div class="contenedor">
+
+                                                            <div class="h-100">
+
+                                                                <div class="d-flex justify-content-center align-items-center"><i class="fa fa-pencil" aria-hidden="true"></i>
+
+                                                                    &ensp; Editar</div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div><!--fi card-body1-->
+                                                </button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 my-2">
+                                    <div class="col-12 mt-2  ">
+
+                                        <div class="card shadow h-100 containerDanger">
+                                            <form method="post" action="{{ path('accio_delete', {'id': accio.id}) }}" onsubmit="return confirm('Aquesta accio sera esborrada de forma permannt, estas segur/a?');">
+                                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ accio.id) }}">
+                                                <button class="common-link text-danger btn w-100" type="submit" href="">
+                                                    <div class="card-body">
+                                                        <div class="contenedor">
+
+                                                            <div class="h-100">
+
+                                                                <div class="d-flex justify-content-center align-items-center containerDanger"><i class="fa fa-trash" aria-hidden="true"></i>
+                                                                    &ensp; Esborrar</div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div><!--fi card-body1-->
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+                                <h6 class="pb-3 mb-0">Contacte / Representant</h6>
+                                <div class="row m-0">
+                                    <hr class="w-100">
+                                </div>
+                                <div class="form-group row m-0 mt-4 mb-3">
+
+                                    <div class="col-12 p-0">
+                                        <div class="input-group">
+
+                                            <input type="text" readonly class="form-control shadow-none" id="poblacio" value="{{ accio.representant.nom}} {{ accio.representant.cognom }}">
+                                            <div class="input-group-prepend ">
+                                                <div class="input-group-text bg-light h-100">
+
+                                                    <a href="{{ path('representant_show', {'id': accio.representant.id}) }}"><i class="fas fa-arrow-right"></i></a>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div><!--Fi row fitxa tecnica-->
+                    </div>
+                </div><!--fi card-body1-->
+            </div>
+        </div><!--fi columna de fitxa tecnica-->
+    </div>
+
+    {# <h1>Accio</h1>
 
     <table class="table">
         <tbody>
@@ -30,5 +198,5 @@
 
     <a href="{{ path('accio_edit', {'id': accio.id}) }}">edit</a>
 
-    {{ include('accio/_delete_form.html.twig') }}
+    {{ include('accio/_delete_form.html.twig') }}#}
 {% endblock %}
