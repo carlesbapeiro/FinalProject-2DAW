@@ -42,7 +42,7 @@ class RepresentantController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'representant_show', methods: ['GET'])]
+    #[Route('/show/{id}', name: 'representant_show', methods: ['GET'])]
     public function show(Representant $representant): Response
     {
         return $this->render('representant/show.html.twig', [
@@ -87,5 +87,19 @@ class RepresentantController extends AbstractController
         }
 
         return $this->redirectToRoute('representant_index');
+    }
+
+    #[Route('/filter', name: 'representant_filter', methods: ['GET'])]
+
+    public function filter(Request $request)
+    {
+        $text = $request->query->getAlnum("text");
+        $representantRepository = $this->getDoctrine()->getRepository(Representant::class);
+        $representants = $representantRepository->filterByText($text);
+
+        return $this->render('representant/index.html.twig', array(
+            'representants' => $representants
+        ));
+
     }
 }

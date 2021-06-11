@@ -42,7 +42,7 @@ class AlumneController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'alumne_show', methods: ['GET'])]
+    #[Route('/show/{id}', name: 'alumne_show', methods: ['GET'])]
     public function show(Alumne $alumne): Response
     {
         return $this->render('alumne/show.html.twig', [
@@ -68,19 +68,6 @@ class AlumneController extends AbstractController
         ]);
     }
 
-/*    #[Route('/{id}', name: 'alumne_delete', methods: ['POST'])]
-    public function delete(Request $request, Alumne $alumne): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$alumne->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($alumne);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('alumne_index');
-    }*/
-
-
     #[Route('/{id}', name: 'alumne_alta', methods: ['POST'])]
     public function alta(Request $request, Alumne $alumne): Response
     {
@@ -100,5 +87,18 @@ class AlumneController extends AbstractController
         }
 
         return $this->redirectToRoute('alumne_index');
+    }
+    #[Route('/filter', name: 'alumne_filter', methods: ['GET'])]
+
+    public function filter(Request $request)
+    {
+        $text = $request->query->getAlnum("text");
+        $alumneRepository = $this->getDoctrine()->getRepository(Alumne::class);
+        $alumnes = $alumneRepository->filterByText($text);
+
+        return $this->render('alumne/index.html.twig', array(
+            'alumnes' => $alumnes
+        ));
+
     }
 }

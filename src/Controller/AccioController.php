@@ -42,7 +42,7 @@ class AccioController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'accio_show', methods: ['GET'])]
+    #[Route('/show/{id}', name: 'accio_show', methods: ['GET'])]
     public function show(Accio $accio): Response
     {
         return $this->render('accio/show.html.twig', [
@@ -78,5 +78,18 @@ class AccioController extends AbstractController
         }
 
         return $this->redirectToRoute('accio_index');
+    }
+    #[Route('/filter', name: 'accio_filter', methods: ['GET'])]
+
+    public function filter(Request $request)
+    {
+        $text = $request->query->getAlnum("text");
+        $accioRepository = $this->getDoctrine()->getRepository(Accio::class);
+        $accions = $accioRepository->filterByText($text);
+
+        return $this->render('accio/index.html.twig', array(
+            'accios' => $accions
+        ));
+
     }
 }

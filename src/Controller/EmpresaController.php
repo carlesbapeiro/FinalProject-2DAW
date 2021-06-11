@@ -43,7 +43,7 @@ class EmpresaController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'empresa_show', methods: ['GET'])]
+    #[Route('/show/{id}', name: 'empresa_show', methods: ['GET'])]
     public function show(Empresa $empresa): Response
     {
         return $this->render('empresa/show.html.twig', [
@@ -84,6 +84,19 @@ class EmpresaController extends AbstractController
         }
 
         return $this->redirectToRoute('empresa_index');
+    }
+    #[Route('/filter', name: 'empresa_filter', methods: ['GET'])]
+
+    public function filter(Request $request)
+    {
+        $text = $request->query->getAlnum("text");
+        $representantRepository = $this->getDoctrine()->getRepository(Empresa::class);
+        $empreses = $representantRepository->filterByText($text);
+
+        return $this->render('empresa/index.html.twig', array(
+            'empresas' => $empreses
+        ));
+
     }
 
 

@@ -19,6 +19,17 @@ class PracticaRepository extends ServiceEntityRepository
         parent::__construct($registry, Practica::class);
     }
 
+    public function filterByText(string $text): array
+    {
+        $qb = $this->createQueryBuilder('pr')
+            ->orWhere('pr.periode LIKE :value');
+
+        $qb->setParameter('value', "%".$text."%");
+        $qb->orderBy('pr.periode', 'ASC');
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Practica[] Returns an array of Practica objects
     //  */

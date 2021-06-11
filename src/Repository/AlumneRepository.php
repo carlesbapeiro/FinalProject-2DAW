@@ -19,6 +19,18 @@ class AlumneRepository extends ServiceEntityRepository
         parent::__construct($registry, Alumne::class);
     }
 
+    public function filterByText(string $text): array
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->orWhere('a.nom LIKE :value')
+            ->orWhere('a.cognom LIKE :value');
+
+        $qb->setParameter('value', "%".$text."%");
+        $qb->orderBy('a.nom', 'ASC');
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Alumne[] Returns an array of Alumne objects
     //  */

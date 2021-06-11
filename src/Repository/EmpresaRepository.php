@@ -19,6 +19,18 @@ class EmpresaRepository extends ServiceEntityRepository
         parent::__construct($registry, Empresa::class);
     }
 
+    public function filterByText(string $text): array
+    {
+        $qb = $this->createQueryBuilder('e')
+            ->orWhere('e.nom LIKE :value')
+            ->orWhere('e.mail LIKE :value');
+
+        $qb->setParameter('value', "%".$text."%");
+        $qb->orderBy('e.nom', 'ASC');
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Empresa[] Returns an array of Empresa objects
     //  */

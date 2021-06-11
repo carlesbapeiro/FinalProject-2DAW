@@ -175,8 +175,14 @@
                                     </div>
 
 
-                                    <div class="col-2 bg-white p-2"> <button class="btn bg-turq  w-100 h-100"><i class="fa fa-external-link" aria-hidden="true"></i>
-                                        </button></div>
+                                    <div class="col-2 bg-white p-2">
+                                        <a href="{{ path('accio_show', {'id': accio.id}) }}">
+                                            <button class="btn bg-turq  w-100 h-100">
+                                                <i class="fa fa-external-link" aria-hidden="true"> </i>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
                                 {% set contador = contador + 1%}
 
 
@@ -190,10 +196,6 @@
 
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
 
@@ -202,7 +204,6 @@
 
     </div><!--fi columna de representants relacionats-->
 
-    </div>
 </div>
 
 <div class="row m-0">

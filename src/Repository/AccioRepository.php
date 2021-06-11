@@ -19,6 +19,17 @@ class AccioRepository extends ServiceEntityRepository
         parent::__construct($registry, Accio::class);
     }
 
+    public function filterByText(string $text): array
+    {
+        $qb = $this->createQueryBuilder('ac')
+            ->orWhere('ac.titol LIKE :value');
+
+        $qb->setParameter('value', "%".$text."%");
+        $qb->orderBy('ac.titol', 'ASC');
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Accio[] Returns an array of Accio objects
     //  */

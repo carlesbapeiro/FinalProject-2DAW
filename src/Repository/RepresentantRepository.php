@@ -19,6 +19,22 @@ class RepresentantRepository extends ServiceEntityRepository
         parent::__construct($registry, Representant::class);
     }
 
+    /**
+     * @return Representant[] Returns an array of Movie objects
+     */
+
+    public function filterByText(string $text): array
+    {
+        $qb = $this->createQueryBuilder('r')
+            ->orWhere('r.nom LIKE :value')
+            ->orWhere('r.cognom LIKE :value');
+
+        $qb->setParameter('value', "%".$text."%");
+        $qb->orderBy('r.nom', 'ASC');
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Representant[] Returns an array of Representant objects
     //  */

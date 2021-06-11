@@ -19,16 +19,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="Crud d'accions i solució de problemes amb la validacio de formualaris a l'hora d'editar">
+    <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="Nou disseny de la paginació i relacions amb accio quasi finalitzades">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/estils.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/estils.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AlumneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AlumneController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EmpresaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmpresaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PracticaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PracticaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProfessorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfessorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RepresentantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RepresentantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AccioRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AccioRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/AlumneRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/AlumneRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EmpresaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EmpresaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PracticaRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PracticaRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProfessorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProfessorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RepresentantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RepresentantRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accio/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accio/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accio/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accio/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/alumne/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alumne/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/alumne/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alumne/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cicle/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cicle/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/empresa/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empresa/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/empresa/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empresa/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/practica/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/practica/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/practica/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/practica/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/professor/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/index.html.twig" afterDir="false" />
@@ -56,6 +65,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
@@ -214,7 +224,8 @@
       <workItem from="1623164142214" duration="8156000" />
       <workItem from="1623229826406" duration="1385000" />
       <workItem from="1623252880747" duration="5915000" />
-      <workItem from="1623335746039" duration="7457000" />
+      <workItem from="1623335746039" duration="7624000" />
+      <workItem from="1623417402848" duration="6730000" />
     </task>
     <task id="LOCAL-00001" summary="Cicles i algunes millores">
       <created>1622053095039</created>
@@ -265,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623336801472</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Nou disseny de la paginació i relacions amb accio quasi finalitzades">
+      <created>1623344115783</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1623344115783</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,31 +308,32 @@
     <MESSAGE value="Solucio d'errors amb cicle degut a relacio manyTomany" />
     <MESSAGE value="Solucio de les migracions i creacio del crud Alumnes, Professors i practica" />
     <MESSAGE value="Crud d'accions i solució de problemes amb la validacio de formualaris a l'hora d'editar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crud d'accions i solució de problemes amb la validacio de formualaris a l'hora d'editar" />
+    <MESSAGE value="Nou disseny de la paginació i relacions amb accio quasi finalitzades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nou disseny de la paginació i relacions amb accio quasi finalitzades" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2673" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1623171757247">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2673" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623171757247" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623256671022">
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623423987231">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623256671022" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623423987231" />
     <state x="552" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1622478267579" />
-    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1622275068604">
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1623417564444">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1622275068604" />
+    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623417564444" />
     <state x="592" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621361611444" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1619280950014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1619280950014" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1623336804354">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1623344243813">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623336804354" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623344243813" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1623342167644">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

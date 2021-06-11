@@ -19,6 +19,18 @@ class ProfessorRepository extends ServiceEntityRepository
         parent::__construct($registry, Professor::class);
     }
 
+    public function filterByText(string $text): array
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->orWhere('p.nom LIKE :value')
+            ->orWhere('p.cognom LIKE :value');
+
+        $qb->setParameter('value', "%".$text."%");
+        $qb->orderBy('p.nom', 'ASC');
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+
     // /**
     //  * @return Professor[] Returns an array of Professor objects
     //  */

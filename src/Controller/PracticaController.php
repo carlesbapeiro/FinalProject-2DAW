@@ -42,7 +42,7 @@ class PracticaController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'practica_show', methods: ['GET'])]
+    #[Route('/show/{id}', name: 'practica_show', methods: ['GET'])]
     public function show(Practica $practica): Response
     {
         return $this->render('practica/show.html.twig', [
@@ -78,5 +78,18 @@ class PracticaController extends AbstractController
         }
 
         return $this->redirectToRoute('practica_index');
+    }
+    #[Route('/filter', name: 'practica_filter', methods: ['GET'])]
+
+    public function filter(Request $request)
+    {
+        $text = $request->query->getAlnum("text");
+        $practicaRepository = $this->getDoctrine()->getRepository(Practica::class);
+        $practiques = $practicaRepository->filterByText($text);
+
+        return $this->render('practica/index.html.twig', array(
+            'practicas' => $practiques
+        ));
+
     }
 }

@@ -42,7 +42,7 @@ class ProfessorController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'professor_show', methods: ['GET'])]
+    #[Route('/show/{id}', name: 'professor_show', methods: ['GET'])]
     public function show(Professor $professor): Response
     {
         return $this->render('professor/show.html.twig', [
@@ -86,5 +86,18 @@ class ProfessorController extends AbstractController
         }
 
         return $this->redirectToRoute('representant_index');
+    }
+    #[Route('/filter', name: 'professor_filter', methods: ['GET'])]
+
+    public function filter(Request $request)
+    {
+        $text = $request->query->getAlnum("text");
+        $professorRepository = $this->getDoctrine()->getRepository(Professor::class);
+        $professors = $professorRepository->filterByText($text);
+
+        return $this->render('professor/index.html.twig', array(
+            'professors' => $professors
+        ));
+
     }
 }
