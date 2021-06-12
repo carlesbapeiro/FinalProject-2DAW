@@ -43,45 +43,62 @@
                         <div class="col-sm-12 col-md-12 col-lg-6 p-0">
                             <div class="contenedor bg-white">
 
-                                {% set contador = 0 %}
+                                {% if app.user %}
+                                    {% set contador = 0 %}
+                                    {% for accio in accions %}
+                                        <div class=" row m-0">
 
-                                {% for accio in accions %}
-                                    <div class=" row m-0">
 
-
-                                        <div class="col-2 p-2 ">
-                                            <div class="subcontainer">
-                                                <h6 class="mb-0">{{ accio.data|date('Y-m-d') }}</h6>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-8 bg-white p-2 ">
-
-                                            <div class="subcontainer">
-
-                                                <h6 class="mb-0">{{ accio.professor.nom}} {{ accio.professor.cognom}} - {{ accio.representant.empresa.nom}}</h6>
+                                            <div class="col-2 p-2 ">
+                                                <div class="subcontainer">
+                                                    <h6 class="mb-0">{{ accio.data|date('Y-m-d') }}</h6>
+                                                </div>
 
                                             </div>
 
-                                        </div>
+                                            <div class="col-8 bg-white p-2 ">
+
+                                                <div class="subcontainer">
+
+                                                    <h6 class="mb-0">{{ accio.professor.nom}} {{ accio.professor.cognom}} - {{ accio.representant.empresa.nom}}</h6>
+
+                                                </div>
+
+                                            </div>
 
 
-                                        <div class="col-2 bg-white p-2">
-                                            <a href="{{ path('accio_show', {'id': accio.id}) }}">
-                                                <button class="btn bg-turq  w-100 h-100">
-                                                    <i class="fa fa-external-link" aria-hidden="true"> </i>
-                                                </button>
-                                            </a>
+                                            <div class="col-2 bg-white p-2">
+                                                <a href="{{ path('accio_show', {'id': accio.id}) }}">
+                                                    <button class="btn bg-turq  w-100 h-100">
+                                                        <i class="fa fa-external-link" aria-hidden="true"> </i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            {% set contador = contador + 1%}
+
                                         </div>
-                                        {% set contador = contador + 1%}
+                                    {% endfor  %}
+
+                                    {% if contador == 0 %}
+                                        <span>No s'ha trobat cap accio</span>
+                                    {% endif %}
+
+                                {% else %}
+                                <div class="row m-0">
+
+                                    <div class="col-sm-12 col-md-12 col-lg-12 p-3">
+
+                                        <p>Inicia sessio per poder gaudir dels avantatges de Soft Launch</p>
 
                                     </div>
-                                {% endfor  %}
+                                </div>
 
-                                {% if contador == 0 %}
-                                    <span>No s'ha trobat cap accio</span>
+
+
                                 {% endif %}
+
+
+
                             </div>
 
 

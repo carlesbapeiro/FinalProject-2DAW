@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 #[Route('/professor')]
 class ProfessorController extends AbstractController
@@ -22,13 +23,17 @@ class ProfessorController extends AbstractController
     }
 
     #[Route('/new', name: 'professor_new', methods: ['GET', 'POST'])]
-    public function new(Request $request): Response
+    public function new(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
         $professor = new Professor();
         $form = $this->createForm(ProfessorType::class, $professor);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $hashedPassword = $encoder->encodePassword($professor, $professor->getContrassenya());
+            $professor->setContrassenya($hashedPassword);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($professor);
             $entityManager->flush();

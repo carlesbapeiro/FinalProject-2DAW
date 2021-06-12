@@ -130,19 +130,34 @@
                                                             </form>
 
                                                         </div>
-
-                                                        <div class="col-2">
-                                                            <div class="d-flex justify-content-end align-items-center h-100">
-                                                                <span>David Crespo</span>
+                                                        {% if app.user %}
+                                                            <div class="col-2">
+                                                                <div class="d-flex justify-content-end align-items-center h-100">
+                                                                    <span>{{ app.user.nom }} {{ app.user.cognom }}</span>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-1">
+                                                            <div class="col-1">
 
-                                                            <div class="d-flex justify-content-start align-items-center h-100">
+                                                                <div class="d-flex justify-content-start align-items-center h-100">
 
-                                                                <button type="button" class="btn bg-blue"><i class="fa fa-sign-in text-light" aria-hidden="true"></i></button>
+                                                                    <a href="/logout"><button type="button" class="btn bg-blue"><i class="fa fa-sign-out text-light" aria-hidden="true"></i></button></a>
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        {% else %}
+
+                                                            <div class="col-2">
+                                                                <div class="d-flex justify-content-end align-items-center h-100">
+                                                                    <span>Inicia sessió!</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-1">
+
+                                                                <div class="d-flex justify-content-start align-items-center h-100">
+
+                                                                    <a href="/login"><button type="button" class="btn bg-blue"><i class="fa fa-sign-in text-light" aria-hidden="true"></i></button></a>
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </nav>

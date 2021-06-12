@@ -17,4 +17,5 @@ class HomeController extends AbstractController
             'accions' => $accioRepository->findAll(),
         ]);
     }
+
 }

@@ -6,12 +6,14 @@ use App\Repository\ProfessorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Exception;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProfessorRepository::class)
  */
-class Professor
+class Professor implements \Symfony\Component\Security\Core\User\UserInterface
 {
     /**
      * @ORM\Id
@@ -60,7 +62,7 @@ class Professor
      * @ORM\Column(type="string", length=50)
      *
      */
-    private $role = 'Normal';
+    private $role;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
@@ -279,9 +281,65 @@ class Professor
 
         return $this;
     }
+    /**
+     * String representation of object.
+     * @link https://php.net/manual/en/serializable.serialize.php
+     * @return string|null The string representation of the object or null
+     * @throws Exception Returning other type than string or null
+     */
+
+
+    public function getRoles()
+    {
+        return [$this->role];
+    }
+
+    public function getPassword()
+    {
+        return $this->contrassenya;
+    }
+
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function getUsername()
+    {
+        return $this->usuari;
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+
     public function __toString()
     {
-        return $this->nom;
+        return (string) $this->nom;
     }
+
+    public function serialize(): ?string
+    {
+        return serialize([
+            $this->getId(),
+            $this->getUsername(),
+            $this->getPassword()
+        ]);
+    }
+
+    /**
+     * Constructs the object.
+     * @link https://php.net/manual/en/serializable.unserialize.php
+     * @param string $serialized The string representation of the object.
+     * @return void
+     */
+    public function unserialize($serialized)
+    {
+        list( $this->id, $this->usuari, $this->contrassenya) =
+            unserialize($serialized, ['allowed_classes' => false]);
+    }
+
 
 }
