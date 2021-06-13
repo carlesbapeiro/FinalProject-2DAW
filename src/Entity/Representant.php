@@ -56,7 +56,7 @@ class Representant
 
     /**
      * @ORM\ManyToOne(targetEntity=Empresa::class, inversedBy="representants")
-     * @ORM\JoinColumn(nullable=true)
+     * @Assert\NotNull(message="L'empresa es obligatoria")
      */
     private $empresa;
 

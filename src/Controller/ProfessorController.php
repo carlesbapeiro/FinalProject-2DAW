@@ -33,6 +33,7 @@ class ProfessorController extends AbstractController
 
             $hashedPassword = $encoder->encodePassword($professor, $professor->getContrassenya());
             $professor->setContrassenya($hashedPassword);
+            $professor->setRole('ROLE_USER');
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($professor);

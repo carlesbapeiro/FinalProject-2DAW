@@ -20,6 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="Implementació d'usuaris">
+      <change afterPath="$PROJECT_DIR$/templates/security/registre.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProfessorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfessorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Representant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Representant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Representant1Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Representant1Type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/alumne/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alumne/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/practica/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/practica/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/professor/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/representant/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/representant/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/representant/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/representant/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/representant/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/representant/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/iniciSessio.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/iniciSessio.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,6 +179,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Usuario\01-carles-final\templates\professor" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Usuario\01-carles-final\templates\security" />
     </key>
@@ -209,7 +224,8 @@
       <workItem from="1623252880747" duration="5915000" />
       <workItem from="1623335746039" duration="7624000" />
       <workItem from="1623417402848" duration="6810000" />
-      <workItem from="1623504872201" duration="10779000" />
+      <workItem from="1623504872201" duration="13321000" />
+      <workItem from="1623592541260" duration="3266000" />
     </task>
     <task id="LOCAL-00001" summary="Cicles i algunes millores">
       <created>1622053095039</created>
@@ -281,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623516860840</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implementació d'usuaris">
+      <created>1623516942574</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1623516942574</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,16 +339,16 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2673" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623509600271" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623509127735">
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1623593066397">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1623508560077" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623509127735" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623593066397" />
     <state x="552" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1622478267579" />
-    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1623515483100">
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1623592845308">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623515483100" />
+    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623592845308" />
     <state x="592" y="218" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621361611444" />
     <state x="2668" y="243" key="NewPhpClassDialog" timestamp="1623507820459">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -336,10 +359,10 @@
     </state>
     <state x="2675" y="424" key="NewPhpFileDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623506610257" />
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1619280950014" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1623516863853">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1623516947036">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623516863853" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623516947036" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1623511900022">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

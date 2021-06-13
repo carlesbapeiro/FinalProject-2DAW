@@ -4,7 +4,13 @@
 namespace App\Controller;
 
 
+use App\Entity\Professor;
+use App\Form\ProfessorType;
+use App\Repository\AccioRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -28,6 +34,31 @@ class SecurityController extends AbstractController
             'error' => $error,
             'lastUserName'=> $lastUsername
         ));
+    }
+
+    #[Route('/registre', name: 'professor_registre', methods: ['GET','POST'])]
+    public function registre(Request $request, UserPasswordEncoderInterface $encoder): Response
+    {
+        $professor = new Professor();
+        $form = $this->createForm(ProfessorType::class, $professor);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $hashedPassword = $encoder->encodePassword($professor, $professor->getContrassenya());
+            $professor->setContrassenya($hashedPassword);
+            $professor->setRole('ROLE_USER');
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($professor);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('home');
+        }
+
+        return $this->render('security/registre.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**

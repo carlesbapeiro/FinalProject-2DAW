@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registre{% endblock %}
+
+{% block body %}
+    {{ form_start(form, {attr: {'novalidate': 'novalidate'}}, method="post") }}
+    {{ form_row(form._token) }}
+    <div class="row">
+
+        <div class="col-2"></div>
+        <div class="col-8 mt-5">
+            <div class="card shadow ">
+                <div class="card-body">
+                    <div class="contenedor bg-white p-3">
+                        <div class="row">
+                            <div class="col-9">
+                                <h5 class="">Registra't!</h5>
+
+                                <hr class="w-100 mb-3">
+
+                            </div>
+                            <div class="col-3"></div>
+                        </div>
+                        <form method="post" novalidate>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6 class="">Informació de sessió</h6>
+                                    <div class="form-group row m-0  mb-3">
+
+                                        <label class="col-sm-2 col-form-label bg-turqNoEmbed text-white rounded-start" for="">{{ form_label(form.usuari,null, {errors: []}) }}</label>
+                                        <div class="col-10 p-0">
+
+                                            {{ form_widget(form.usuari) }}
+
+                                        </div>
+                                        {{ form_errors(form.usuari) }}
+                                    </div>
+                                    <div class="form-group row m-0  mb-3">
+
+                                        <div class="col-sm-2 col-form-label bg-turqNoEmbed text-white rounded-start">{{ form_label(form.contrassenya,null, {errors: []}) }}</div>
+                                        <div class="col-10 p-0">
+                                            <div class="input-group">
+                                                {{ form_widget(form.contrassenya) }}
+                                                {#<input type="text"  class="form-control shadow-none" id="poblacio" value="" placeholder="Valencia">#}
+
+                                            </div>
+                                        </div>
+                                        {{ form_errors(form.contrassenya) }}
+                                    </div>
+
+                                    <h6>Informació bàsica</h6>
+                                    <hr>
+
+                                    <div class="form-group row m-0  mb-3">
+
+
+                                        <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.nom,null, {errors: []}) }}</div>
+                                        <div class="col-10 p-0">
+                                            <div class="input-group">
+
+                                                {{ form_widget(form.nom) }}
+                                                {#<input type="text"  class="form-control shadow-none" id="nom" value="" placeholder="Nom">#}
+
+                                            </div>
+                                        </div>
+                                        {{ form_errors(form.nom) }}
+                                    </div>
+
+                                    <div class="form-group row m-0  mb-3">
+
+
+                                        <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.cognom,null, {errors: []}) }}</div>
+                                        <div class="col-10 p-0">
+                                            <div class="input-group">
+
+                                                {{ form_widget(form.cognom) }}
+                                                {#<input type="text"  class="form-control shadow-none" id="nom" value="" placeholder="Nom">#}
+
+                                            </div>
+                                        </div>
+                                        {{ form_errors(form.cognom) }}
+                                    </div>
+
+                                    <h6 class="mt-5">Informació de contacte</h6>
+                                    <hr>
+                                    <div class="form-group row m-0  mb-3">
+
+
+                                        <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.mail,null, {errors: []}) }}</div>
+                                        <div class="col-10 p-0">
+                                            <div class="input-group">
+
+                                                {{ form_widget(form.mail) }}
+                                                {#<input type="text"  class="form-control shadow-none" id="mail" value="" placeholder="example@gmail.com">#}
+
+                                            </div>
+                                        </div>
+                                        {{ form_errors(form.mail) }}
+                                    </div>
+                                    <div class="form-group row m-0 mt-4 mb-3">
+
+                                        <div class="col-sm-2 col-form-label bg-secondary text-white rounded-start">{{ form_label(form.telefon,null, {errors: []}) }}</div>
+                                        <div class="col-10 p-0">
+                                            <div class="input-group">
+
+                                                {{ form_widget(form.telefon) }}
+                                                {# <input type="text"  class="form-control shadow-none" id="tel" value="" placeholder="000000000">#}
+
+                                            </div>
+                                        </div>
+                                        {{ form_errors(form.telefon) }}
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col6"></div>
+                                <div class="col6"><small>Ja tens un compte?</small></div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <a href="{{ path('login') }}" class="btn bg-turq text-white w-100">Inicia Sessió</a>
+                                </div>
+                                <div class="col-6">
+                                    <input type="submit" class="btn bg-blue text-white w-100" value="Registra't">
+
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+
+    {{ form_end(form) }}
+
+{% endblock %}

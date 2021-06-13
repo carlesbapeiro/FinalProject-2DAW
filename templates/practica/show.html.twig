@@ -52,7 +52,7 @@
 
                                             <div class="subcontainer">
 
-                                                <h6 class="mb-0">{{ accio.professor.nom}} {{ accio.professor.cognom}} - {{ accio.representant.empresa.nom}}</h6>
+                                                <h6 class="mb-0">{{ accio.professor.nom}} {{ accio.professor.cognom}} - {{ accio.representant.empresa.nom ?? accio.representant.nom ~ ' ' ~ accio.representant.cognom}}</h6>
 
                                             </div>
 

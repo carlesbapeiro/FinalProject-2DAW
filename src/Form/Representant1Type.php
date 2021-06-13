@@ -81,6 +81,7 @@ class Representant1Type extends AbstractType
                 ['class' => Empresa::class,
                     'choice_label' => 'nom',
                     'placeholder' => 'Tria una empresa',
+                    'required' =>true
                 ])
         ;
     }
