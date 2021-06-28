@@ -19,20 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="Implementació d'usuaris">
-      <change afterPath="$PROJECT_DIR$/templates/security/registre.html.twig" afterDir="false" />
+    <list default="true" id="f271b96d-e836-4e77-8841-be5e10555632" name="Default Changelist" comment="Realització d'un registre">
+      <change afterPath="$PROJECT_DIR$/public/images/logo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logoAlternativo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProfessorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfessorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccioController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Representant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Representant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Representant1Type.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Representant1Type.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/alumne/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/alumne/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/practica/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/practica/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/professor/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/representant/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/representant/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/representant/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/representant/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/empresa/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/empresa/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/professor/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/professor/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/representant/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/representant/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/iniciSessio.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/iniciSessio.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +169,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../01-carles-symfony" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
@@ -179,11 +177,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Usuario\01-carles-final\templates\professor" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Usuario\01-carles-final\templates\security" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Usuario\01-carles-final\public\images" />
+      <recent name="E:\Usuario\01-carles-final\templates\professor" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -225,7 +224,8 @@
       <workItem from="1623335746039" duration="7624000" />
       <workItem from="1623417402848" duration="6810000" />
       <workItem from="1623504872201" duration="13321000" />
-      <workItem from="1623592541260" duration="3266000" />
+      <workItem from="1623592541260" duration="4192000" />
+      <workItem from="1624283937414" duration="4112000" />
     </task>
     <task id="LOCAL-00001" summary="Cicles i algunes millores">
       <created>1622053095039</created>
@@ -304,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623516942574</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Realització d'un registre">
+      <created>1623595874287</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1623595874287</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +339,8 @@
     <MESSAGE value="Nou disseny de la paginació i relacions amb accio quasi finalitzades" />
     <MESSAGE value="Implementació de filtres" />
     <MESSAGE value="Implementació d'usuaris" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementació d'usuaris" />
+    <MESSAGE value="Realització d'un registre" />
+    <option name="LAST_COMMIT_MESSAGE" value="Realització d'un registre" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2673" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1623509600271">
@@ -359,10 +367,10 @@
     </state>
     <state x="2675" y="424" key="NewPhpFileDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623506610257" />
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1619280950014" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1623516947036">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1623595873918">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623516947036" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1623595873918" />
     <state x="2536" y="240" key="run.anything.popup" timestamp="1623511900022">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

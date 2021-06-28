@@ -10,6 +10,7 @@ use App\Repository\AccioRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Routing\Annotation\Route;
@@ -53,7 +54,14 @@ class SecurityController extends AbstractController
             $entityManager->persist($professor);
             $entityManager->flush();
 
+            $user = $professor;
+            $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+            $this->container->get('security.token_storage')->setToken($token);
+            $this->container->get('session')->set('_security_main', serialize($token));
+
             return $this->redirectToRoute('home');
+
+
         }
 
         return $this->render('security/registre.html.twig', [

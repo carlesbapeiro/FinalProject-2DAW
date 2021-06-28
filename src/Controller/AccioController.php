@@ -16,9 +16,12 @@ class AccioController extends AbstractController
     #[Route('/', name: 'accio_index', methods: ['GET'])]
     public function index(AccioRepository $accioRepository): Response
     {
+
         return $this->render('accio/index.html.twig', [
             'accios' => $accioRepository->findAll(),
         ]);
+
+
     }
 
     #[Route('/new', name: 'accio_new', methods: ['GET', 'POST'])]
